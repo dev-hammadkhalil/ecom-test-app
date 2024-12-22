@@ -1,0 +1,559 @@
+{
+	"info": {
+		"_postman_id": "66f94cdf-c6c1-42ad-81fd-f9f5208e1f27",
+		"name": "ecom-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31482039"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Hammad\",\n    \"lastName\": \"Khalil\",\n    \"email\": \"hammad1237@gmail.com\",\n    \"password\": \"1q2w3e4r\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3004/api/users/register"
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Hammad\",\n    \"lastName\": \"Khalil\",\n    \"email\": \"hammad1237@gmail.com\",\n    \"password\": \"1q2w3e4r\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:3004/api/users/register"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "236"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ec-ysrvli42Eakid+XShW/NxqLXMp0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Dec 2024 00:48:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 201,\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"firstName\": \"Hammad\",\n        \"lastName\": \"Khalil\",\n        \"email\": \"hammad1237@gmail.com\",\n        \"id\": 4,\n        \"role\": \"user\",\n        \"createdAt\": \"2024-12-22T00:48:21.207Z\",\n        \"updatedAt\": \"2024-12-22T00:48:21.207Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hammad@gmail.com\",\n    \"password\": \"1q2w3e4r\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3004/api/auth/login"
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"hammad@gmail.com\",\n    \"password\": \"1q2w3e4r\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:3004/api/auth/login"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "421"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a5-xwMUCcXHmA99lZFUs2LUyjChzUU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Dec 2024 00:47:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 1,\n        \"firstName\": \"Hammad\",\n        \"lastName\": \"Khalil\",\n        \"email\": \"hammad@gmail.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2024-12-21T20:08:58.821Z\",\n        \"updatedAt\": \"2024-12-21T21:49:34.463Z\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbW1hZEBnbWFpbC5jb20iLCJzdWIiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDgyODQ2MCwiZXhwIjoxNzM0ODMyMDYwfQ.d4fEtDFgCMvpsIhRkPE93egXEahSc2gY3uuk_zyPrKQ\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get all Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbW1hZEBnbWFpbC5jb20iLCJzdWIiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDgyODQ2MCwiZXhwIjoxNzM0ODMyMDYwfQ.d4fEtDFgCMvpsIhRkPE93egXEahSc2gY3uuk_zyPrKQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3004/api/products?maxPrice=80&search=new",
+							"host": [
+								"localhost"
+							],
+							"port": "3004",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "maxPrice",
+									"value": "80"
+								},
+								{
+									"key": "search",
+									"value": "new"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3004/api/products?maxPrice=80&search=new",
+									"host": [
+										"localhost"
+									],
+									"port": "3004",
+									"path": [
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "maxPrice",
+											"value": "80"
+										},
+										{
+											"key": "search",
+											"value": "new"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4715"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"126b-oV4Eu60Li/SWtn3m3JeHxZxvGYA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Dec 2024 00:48:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"laptops\": [\n            {\n                \"id\": 9,\n                \"title\": \"new Product\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": null,\n                \"createdAt\": \"2024-12-21T22:20:17.000Z\",\n                \"updatedAt\": \"2024-12-21T22:20:17.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            },\n            {\n                \"id\": 13,\n                \"title\": \"new Product 5\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": null,\n                \"createdAt\": \"2024-12-21T22:55:02.000Z\",\n                \"updatedAt\": \"2024-12-21T22:55:02.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            },\n            {\n                \"id\": 15,\n                \"title\": \"new Product with image\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-21T23:25:14.000Z\",\n                \"updatedAt\": \"2024-12-21T23:25:14.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            },\n            {\n                \"id\": 16,\n                \"title\": \"new Product with image by hammad123\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-21T23:48:57.000Z\",\n                \"updatedAt\": \"2024-12-21T23:48:57.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            },\n            {\n                \"id\": 17,\n                \"title\": \"new Product 5 with image by hammad123\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-22T00:03:16.000Z\",\n                \"updatedAt\": \"2024-12-22T00:03:16.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            },\n            {\n                \"id\": 18,\n                \"title\": \"new Product 5 with image by hammad123 (user)\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-22T00:20:17.000Z\",\n                \"updatedAt\": \"2024-12-22T00:20:17.000Z\",\n                \"user\": {\n                    \"id\": 2,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad123@gmail.com\"\n                }\n            },\n            {\n                \"id\": 19,\n                \"title\": \"new Product 5 with image by hammad123 (user)\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-22T00:21:09.000Z\",\n                \"updatedAt\": \"2024-12-22T00:21:09.000Z\",\n                \"user\": {\n                    \"id\": 2,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad123@gmail.com\"\n                }\n            },\n            {\n                \"id\": 20,\n                \"title\": \"new Product 5 with image by hammad123 (user)\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-22T00:21:40.000Z\",\n                \"updatedAt\": \"2024-12-22T00:21:40.000Z\",\n                \"user\": {\n                    \"id\": 2,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad123@gmail.com\"\n                }\n            },\n            {\n                \"id\": 21,\n                \"title\": \"new Product 5 with image by hammad123 (user)\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-22T00:22:28.000Z\",\n                \"updatedAt\": \"2024-12-22T00:22:28.000Z\",\n                \"user\": {\n                    \"id\": 2,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad123@gmail.com\"\n                }\n            },\n            {\n                \"id\": 22,\n                \"title\": \"new Product 5 with image by hammad123 (user)\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"laptops\",\n                \"stock\": 10,\n                \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n                \"createdAt\": \"2024-12-22T00:24:53.000Z\",\n                \"updatedAt\": \"2024-12-22T00:24:53.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            }\n        ],\n        \"phones\": [\n            {\n                \"id\": 11,\n                \"title\": \"new Product 3\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"phones\",\n                \"stock\": 10,\n                \"imageUrl\": null,\n                \"createdAt\": \"2024-12-21T22:20:26.000Z\",\n                \"updatedAt\": \"2024-12-21T22:20:26.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            },\n            {\n                \"id\": 12,\n                \"title\": \"new Product 4\",\n                \"price\": \"80.00\",\n                \"description\": \"this is the first product created by postman\",\n                \"category\": \"phones\",\n                \"stock\": 10,\n                \"imageUrl\": null,\n                \"createdAt\": \"2024-12-21T22:20:31.000Z\",\n                \"updatedAt\": \"2024-12-21T22:20:31.000Z\",\n                \"user\": {\n                    \"id\": 1,\n                    \"firstName\": \"Hammad\",\n                    \"lastName\": \"Khalil\",\n                    \"email\": \"hammad@gmail.com\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbW1hZEBnbWFpbC5jb20iLCJzdWIiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDgyODQ2MCwiZXhwIjoxNzM0ODMyMDYwfQ.d4fEtDFgCMvpsIhRkPE93egXEahSc2gY3uuk_zyPrKQ"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"new Product 6 with image by hammad (admin)\",\n    \"price\": 20,\n    \"stock\": 10,\n    \"description\": \"this is the first product created by postman\",\n    \"category\": \"laptops\",\n    \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3004/api/products/create"
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"new Product 6 with image by hammad (admin)\",\n    \"price\": 20,\n    \"stock\": 10,\n    \"description\": \"this is the first product created by postman\",\n    \"category\": \"laptops\",\n    \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:3004/api/products/create"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "393"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"189-12Roab67TZ7dmWJbKtElm/c3cSQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Dec 2024 00:49:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"title\": \"new Product 6 with image by hammad (admin)\",\n        \"price\": 20,\n        \"stock\": 10,\n        \"description\": \"this is the first product created by postman\",\n        \"category\": \"laptops\",\n        \"imageUrl\": \"https://dcblog.b-cdn.net/wp-content/uploads/2021/02/Full-form-of-URL-1.jpg\",\n        \"id\": 23,\n        \"createdAt\": \"2024-12-22T00:49:54.000Z\",\n        \"updatedAt\": \"2024-12-22T00:49:54.000Z\",\n        \"uploadedBy\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Product by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbW1hZEBnbWFpbC5jb20iLCJzdWIiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDgyODQ2MCwiZXhwIjoxNzM0ODMyMDYwfQ.d4fEtDFgCMvpsIhRkPE93egXEahSc2gY3uuk_zyPrKQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3004/api/products/9"
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:3004/api/products/9"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "363"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16b-w5BBS/191GlYTfpTsMxnraFS76I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Dec 2024 00:52:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 9,\n        \"title\": \"new Product\",\n        \"price\": \"80.00\",\n        \"description\": \"this is the first product created by postman\",\n        \"category\": \"laptops\",\n        \"stock\": 10,\n        \"imageUrl\": null,\n        \"createdAt\": \"2024-12-21T22:20:17.000Z\",\n        \"updatedAt\": \"2024-12-21T22:20:17.000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"firstName\": \"Hammad\",\n            \"lastName\": \"Khalil\",\n            \"email\": \"hammad@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update product by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbW1hZEBnbWFpbC5jb20iLCJzdWIiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDgyODQ2MCwiZXhwIjoxNzM0ODMyMDYwfQ.d4fEtDFgCMvpsIhRkPE93egXEahSc2gY3uuk_zyPrKQ"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": 100,\n    \"title\": \"updated title of this product\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3004/api/products/13"
+					},
+					"response": [
+						{
+							"name": "response",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"price\": 100,\n    \"title\": \"updated title of this product\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:3004/api/products/13"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "383"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17f-+2Q9+YpS+wbswTujR8LJkStRXh0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Dec 2024 00:54:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 13,\n        \"title\": \"updated title of this product\",\n        \"price\": \"100.00\",\n        \"description\": \"this is the first product created by postman\",\n        \"category\": \"laptops\",\n        \"stock\": 10,\n        \"imageUrl\": null,\n        \"createdAt\": \"2024-12-21T22:55:02.000Z\",\n        \"updatedAt\": \"2024-12-21T22:55:02.000Z\",\n        \"user\": {\n            \"id\": 1,\n            \"firstName\": \"Hammad\",\n            \"lastName\": \"Khalil\",\n            \"email\": \"hammad@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Product By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhbW1hZEBnbWFpbC5jb20iLCJzdWIiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTczNDgyODQ2MCwiZXhwIjoxNzM0ODMyMDYwfQ.d4fEtDFgCMvpsIhRkPE93egXEahSc2gY3uuk_zyPrKQ"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3004/api/products/22"
+					},
+					"response": [
+						{
+							"name": "Delete Product By Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:3004/api/products/22"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-DwzHQxuYRT/wj+4WU8fVCqWQ6qY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 22 Dec 2024 00:55:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 200,\n    \"message\": \"Success\",\n    \"data\": []\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "inherit",
+		"inherit": {}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
